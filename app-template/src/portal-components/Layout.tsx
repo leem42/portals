@@ -8,9 +8,11 @@ const Layout = ({
   containerClassName?: string
 }) => {
   return (
-    <div className={`container-fluid ${containerClassName}`}>
-      <div className="row">
-        <div className="col-md-offset-1 col-md-10">{children}</div>
+    <div className={containerClassName}>
+      <div className={`container`}>
+        <div className="row">
+          <div className="col-md-12">{children}</div>
+        </div>
       </div>
     </div>
   )
