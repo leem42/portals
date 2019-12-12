@@ -64,13 +64,13 @@ export const studies: HomeExploreConfig = {
           {
             isMarkdown: false,
             baseURL: 'Explore/Publications',
-            URLColumnNames: ['Title'],
+            URLColumnName: 'Title',
             matchColumnName: 'Title',
           },
           {
             isMarkdown: false,
             baseURL: 'Explore/Datasets',
-            URLColumnNames: ['datasets'],
+            URLColumnName: 'datasets',
             matchColumnName: 'datasets',
           },
         ],

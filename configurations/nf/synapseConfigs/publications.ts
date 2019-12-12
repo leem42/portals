@@ -16,7 +16,7 @@ export const publicationsCardConfiguration: CardConfiguration = {
     {
       isMarkdown: false,
       baseURL: 'Explore/Studies',
-      URLColumnNames: ['studyName'],
+      URLColumnName: 'studyName',
       matchColumnName: 'studyName',
     },
   ],

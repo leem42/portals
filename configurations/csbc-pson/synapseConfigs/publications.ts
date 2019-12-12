@@ -68,13 +68,13 @@ export const publications: HomeExploreConfig = {
           {
             isMarkdown: false,
             baseURL: 'Explore/Datasets',
-            URLColumnNames: ['datasets'],
+            URLColumnName: 'datasets',
             matchColumnName: 'datasets',
           },
           {
             isMarkdown: false,
             baseURL: 'Explore/Studies',
-            URLColumnNames: ['studies'],
+            URLColumnName: 'studies',
             matchColumnName: 'studies',
           },
         ],

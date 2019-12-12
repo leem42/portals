@@ -20,6 +20,7 @@ import loadingScreen from './loadingScreen'
 import { toolsSchema, toolsSql } from './synapseConfigs/tools'
 import { filesSql } from './synapseConfigs/files'
 import DatasetSvg from './style/Dataset.svg'
+import { grantsSchema, grantsSql } from './synapseConfigs/grants'
 const homeLimit = 3
 
 const routes: GenericRoute[] = [
@@ -142,6 +143,36 @@ const routes: GenericRoute[] = [
             },
           },
         ],
+        programmaticRouteConfig: [
+          {
+            name: 'CardContainerLogic',
+            isOutsideContainer: true,
+            props: {
+              type: SynapseConstants.GENERIC_CARD,
+              isHeader: true,
+              backgroundColor: '#407ba0',
+              genericCardSchema: grantsSchema,
+              loadingScreen,
+              facetAliases,
+              labelConfig: [
+                {
+                  isMarkdown: false,
+                  baseURL: 'Explore/Datasets',
+                  URLColumnName: 'datasets',
+                  matchColumnName: 'datasets',
+                },
+                {
+                  isMarkdown: false,
+                  baseURL: 'Explore/Studies',
+                  URLColumnName: 'studies',
+                  matchColumnName: 'studies',
+                },
+              ],
+              secondaryLabelLimit: Infinity,
+              sql: grantsSql,
+            },
+          },
+        ],
       },
       {
         name: 'Publications',
@@ -171,13 +202,13 @@ const routes: GenericRoute[] = [
                 {
                   isMarkdown: false,
                   baseURL: 'Explore/Datasets',
-                  URLColumnNames: ['datasets'],
+                  URLColumnName: 'datasets',
                   matchColumnName: 'datasets',
                 },
                 {
                   isMarkdown: false,
                   baseURL: 'Explore/Studies',
-                  URLColumnNames: ['studies'],
+                  URLColumnName: 'studies',
                   matchColumnName: 'studies',
                 },
               ],
@@ -215,13 +246,13 @@ const routes: GenericRoute[] = [
                 {
                   isMarkdown: false,
                   baseURL: 'Explore/Publications',
-                  URLColumnNames: ['Title'],
+                  URLColumnName: 'Title',
                   matchColumnName: 'Title',
                 },
                 {
                   isMarkdown: false,
                   baseURL: 'Explore/Datasets',
-                  URLColumnNames: ['datasets'],
+                  URLColumnName: 'datasets',
                   matchColumnName: 'datasets',
                 },
               ],
@@ -294,13 +325,13 @@ const routes: GenericRoute[] = [
                 {
                   isMarkdown: false,
                   baseURL: 'Explore/Studies',
-                  URLColumnNames: ['studies'],
+                  URLColumnName: 'studies',
                   matchColumnName: 'studies',
                 },
                 {
                   isMarkdown: false,
                   baseURL: 'Explore/Publications',
-                  URLColumnNames: ['Title'],
+                  URLColumnName: 'Title',
                   matchColumnName: 'Title',
                 },
               ],

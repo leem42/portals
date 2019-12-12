@@ -82,7 +82,7 @@ const studies: HomeExploreConfig = {
         titleLinkConfig: {
           isMarkdown: false,
           baseURL: 'Explore/Studies',
-          URLColumnNames: ['studyId'],
+          URLColumnName: 'studyId',
         },
       },
       searchConfiguration: {

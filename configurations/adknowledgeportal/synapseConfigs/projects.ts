@@ -21,7 +21,8 @@ export const projectCardProps = {
   titleLinkConfig: {
     isMarkdown: false,
     baseURL: 'Explore/Projects',
-    URLColumnNames: ['Grant Number'],
+    URLColumnName: 'Grant Number',
+    matchColumnName: 'Grant Number',
   },
 }
 

@@ -5,6 +5,7 @@ import { facetAliases } from './commonProps'
 import { GenericCardSchema } from 'synapse-react-client/dist/containers/GenericCard'
 import { Project } from 'synapse-react-client/dist/assets/themed_icons/Project'
 const sql = `SELECT * FROM syn10142562 WHERE ( "grantType" = 'U54' OR "grantType" = 'U01')`
+export const grantsSql = `SELECT * FROM syn10142562 WHERE ( "grantType" = 'U54' OR "grantType" = 'U01')`
 const unitDescription = 'grants'
 const rgbIndex = 3
 
