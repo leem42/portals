@@ -3,7 +3,7 @@ import { HomeExploreConfig } from 'types/portal-config'
 import loadingScreen from '../loadingScreen'
 import { facetAliases } from './commonProps'
 
-const sql = 'SELECT * FROM syn16859580'
+const sql = 'SELECT * FROM syn16859580 ORDER BY ROW_ID DESC '
 export const datasetsEntityId = 'syn16859580'
 const entityId = datasetsEntityId
 export const datasetsSql = sql

@@ -4,7 +4,7 @@ import { facetAliases } from './commonProps'
 import { CardConfiguration } from 'synapse-react-client/dist/containers/CardContainerLogic'
 import loadingScreen from '../loadingScreen'
 
-const sql = 'SELECT * FROM syn16857542'
+const sql = 'SELECT * FROM syn16857542 ORDER BY ROW_ID DESC '
 export const publicationsSql = sql
 export const publicationsEntityId = 'syn16857542'
 export const entityId = publicationsEntityId

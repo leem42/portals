@@ -266,6 +266,7 @@ export const studiesGenerateComponentsFromRowProps: GenerateComponentsFromRowPro
       props: {
         sqlOperator: '=',
         sql,
+        entityId,
         ...studyCardConfiguration,
       },
     },

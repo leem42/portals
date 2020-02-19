@@ -7,8 +7,9 @@ import studyCompleteSvg from '../style/study-complete.svg'
 import studyCompleteHeaderSvg from '../style/study-completed-header.svg'
 import studyActiveHeaderSvg from '../style/study-active-header.svg'
 import { CardConfiguration } from 'synapse-react-client/dist/containers/CardContainerLogic'
+import { GenerateComponentsFromRowProps } from 'types/portal-util-types'
 
-const sql = 'SELECT * FROM syn16787123'
+const sql = 'SELECT * FROM syn16787123 ORDER BY ROW_ID DESC'
 export const studiesEntityId = 'syn16787123'
 const entityId = studiesEntityId
 export const studiesSql = sql
@@ -161,6 +162,18 @@ const studies: HomeExploreConfig = {
       ],
     },
   },
+}
+export const studiesGenerateComponentsFromRow: GenerateComponentsFromRowProps = {
+  sql: studiesSql,
+  sqlOperator: '=',
+  entityId: entityId,
+  synapseConfigArray: [
+    {
+      name: 'Markdown',
+      columnName: 'summary',
+      props: {},
+    },
+  ],
 }
 
 export default studies
