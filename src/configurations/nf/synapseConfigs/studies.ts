@@ -170,8 +170,27 @@ export const studiesGenerateComponentsFromRow: GenerateComponentsFromRowProps = 
   synapseConfigArray: [
     {
       name: 'Markdown',
-      columnName: 'summary',
+      title: 'Access Requirements',
+      columnName: 'accessRequirements',
       props: {},
+    },
+    {
+      name: 'Markdown',
+      title: 'Acknowledgement Statements',
+      columnName: 'acknowledgementStatements',
+      props: {},
+    },
+    {
+      name: 'CardContainerLogic',
+      title: 'Related Studies',
+      columnName: 'relatedStudies',
+      tableSqlKeys: ['id'],
+      props: {
+        ...studyCardConfiguration,
+        sqlOperator: '=',
+        sql,
+        entityId,
+      },
     },
   ],
 }

@@ -143,6 +143,7 @@ const publicationsFromRowProps: GenerateComponentsFromRowProps = {
       tableSqlKeys: ['long_amp_ad_grants'],
       props: {
         sql,
+        entityId,
         ...publicationCardProps,
       },
     },

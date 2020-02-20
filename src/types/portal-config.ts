@@ -121,10 +121,9 @@ export type HomeExploreConfig = {
   explorePageSynapseObject: SynapseConfig
 }
 
-export interface BaseRoute {
+interface RouteOptions {
   name: string
   displayName?: string
-  isNested: boolean
   programmaticRouteConfig?: SynapseConfigArray
   hideRouteFromNavbar?: boolean
   to?: string
@@ -133,7 +132,11 @@ export interface BaseRoute {
   synapseConfigArray?: SynapseConfigArray
 }
 
-export interface NestedRoute extends BaseRoute {
+export interface BaseRoute extends RouteOptions {
+  isNested: false
+}
+
+export interface NestedRoute extends RouteOptions {
   isNested: true
   routes: Array<BaseRoute | NestedRoute>
 }
