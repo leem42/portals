@@ -1,11 +1,11 @@
 import { GenericRoute } from 'types/portal-config'
 import routeButtonControlWrapperProps from './routeButtonControlWrapperProps'
-import projects, {
-  projectCardConfiguration,
-  projectsSql,
-  projectsEntityId,
-  projectsDetailsPageConfiguration,
-} from './synapseConfigs/projects'
+import grants, {
+  grantCardConfiguration,
+  grantsSql,
+  grantsEntityId,
+  grantsDetailsPageConfiguration,
+} from './synapseConfigs/grants'
 import studies, {
   studyCardConfiguration,
   studiesSql,
@@ -33,7 +33,7 @@ const routes: GenericRoute[] = [
         title: 'EXPLORE',
         props: {
           customRoutes: [
-            'Projects',
+            'Grants',
             'Studies',
             'Tools',
             'People',
@@ -49,15 +49,15 @@ const routes: GenericRoute[] = [
     isNested: true,
     routes: [
       {
-        name: 'Projects',
-        to: '/Explore/Projects',
+        name: 'Grants',
+        to: '/Explore/Grants',
         isNested: true,
         synapseConfigArray: [
           {
             ...routeButtonControlWrapperProps,
             props: {
               ...routeButtonControlWrapperProps.props,
-              synapseConfig: projects.explorePageSynapseObject,
+              synapseConfig: grants.explorePageSynapseObject,
             },
           },
         ],
@@ -65,16 +65,16 @@ const routes: GenericRoute[] = [
           {
             name: 'DetailsPage',
             isNested: false,
-            to: 'Explore/Projects/DetailsPage',
+            to: 'Explore/Grants/DetailsPage',
             synapseConfigArray: [
               {
                 name: 'CardContainerLogic',
                 isOutsideContainer: true,
                 props: {
                   isHeader: true,
-                  ...projectCardConfiguration,
-                  sql: projectsSql,
-                  entityId: projectsEntityId,
+                  ...grantCardConfiguration,
+                  sql: grantsSql,
+                  entityId: grantsEntityId,
                   isAlignToLeftNav: true,
                   secondaryLabelLimit: Infinity,
                   backgroundColor: '#5bb0b5',
@@ -82,7 +82,7 @@ const routes: GenericRoute[] = [
               },
               {
                 name: 'GenerateComponentsFromRow',
-                props: projectsDetailsPageConfiguration,
+                props: grantsDetailsPageConfiguration,
               },
             ],
           },
