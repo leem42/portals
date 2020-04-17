@@ -10,6 +10,7 @@ export type AppInitializerState = {
   token: string
   showLoginDialog: boolean
   userProfile: UserProfile | undefined
+  lastPathname: string
 }
 
 export const TokenContext = React.createContext('')
@@ -34,6 +35,7 @@ class AppInitializer extends React.Component<Props, AppInitializerState> {
       token: '',
       userProfile: undefined,
       showLoginDialog: false,
+      lastPathname: '',
     }
     this.updateSynapseCallbackCookie = this.updateSynapseCallbackCookie.bind(
       this,
@@ -92,6 +94,16 @@ class AppInitializer extends React.Component<Props, AppInitializerState> {
     window.addEventListener('click', this.updateSynapseCallbackCookie)
     // on first time, also check for the SSO code
     SynapseClient.detectSSOCode()
+    this.props.history.listen((location, action) => {
+      if (action === 'POP' && location.pathname !== this.state.lastPathname) {
+        window.location.reload(false)
+      }
+      if (location.pathname !== this.state.lastPathname) {
+        this.setState({
+          lastPathname: location.pathname,
+        })
+      }
+    })
   }
 
   componentWillUnmount() {

@@ -19,14 +19,14 @@ export const getRouteFromParams = (pathname: string) => {
   const pathWithName = pathname === '/' ? '/Home' : pathname
   // e.g. split = '', 'Explore', 'Programs
   const split = pathWithName.split('/')
-  let route = routesConfig.find(el => split[1] === el.name)!
+  let route = routesConfig.find((el) => split[1] === el.name)!
   // search the route configs for the pathname
   for (let i = 2; i < split.length; i += 1) {
     if (!route) {
       return fail(`Error: url at ${pathWithName} has no route mapping`)
     }
     if (route.isNested) {
-      route = route.routes.find(el => split[i] === el.name)!
+      route = route.routes.find((el) => split[i] === el.name)!
     } else {
       fail(`Route at ${pathname} has no SynapseConfigArray mapping`)
     }
